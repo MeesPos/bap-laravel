@@ -1,24 +1,20 @@
-<div class="py-16">
-    <div class="container m-auto px-6">
-
-        <div class="lg:flex justify-between items-center">
-            <div class="lg:w-6/12 lg:p-0 p-7">
-                <h1 class="text-4xl font-bold leading-tight mb-5 capitalize">Luxe Designer Kleding voor Dames & Heren</h1>
-                <p class="text-xl">Alle luxe designer kleding voor dames & heren op een plek!</p>
-
-                <div class="py-5">
-                    <a href="#"
-                        class="text-black rounded-md py-3 px-6 text-sm bg-yellow-500 inline-block mr-3">Ons aanbod &rarr;
-                    </a>
-                </div>
-
-            </div>
-            <div class="lg:w-5/12 order-2">
-                <img src="{{asset('/img/header.jpg')}}"
-                    style="transform: scale(1) perspective(1040px) rotateY(-11deg) rotateX(2deg) rotate(2deg);" alt=""
-                    class="rounded">
+<div class="container mx-auto px-6 py-16">
+    <div class="md:flex items-center">
+        <div class="w-full md:w-1/2">
+            <div class="max-w-lg">
+                <h1 class="text-gray-800 text-2xl font-semibold uppercase md:text-3xl">Best Place To Choose Your Clothes
+                </h1>
+                <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro beatae
+                    error laborum ab amet sunt recusandae? Reiciendis natus perspiciatis optio.</p>
+                <button
+                    class="mt-4 px-3 py-2 bg-indigo-600 text-white text-sm uppercase font-medium rounded hover:bg-indigo-500 focus:outline-none focus:bg-indigo-500">Shop
+                    Now</button>
             </div>
         </div>
 
+        <div class="flex items-center justify-center w-full mt-6 md:mt-0 md:w-1/2">
+            <img class="max-w-2xl w-full h-full" src="{{asset('/img/header.svg')}}" alt="">
+        </div>
     </div>
 </div>
+</header>
