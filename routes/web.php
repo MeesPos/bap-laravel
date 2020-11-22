@@ -18,3 +18,5 @@ Route::get('/heren', 'ProductController@heren')->name('heren');
 Route::get('/dames', 'ProductController@dames')->name('dames');
 Route::get('/kids', 'ProductController@kids')->name('kids');
 Route::get('/contact', 'ProductController@contact')->name('contact');
+
+Auth::routes();
