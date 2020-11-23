@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="flex max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden lg:max-w-4xl align-middle">
+<div class="flex max-w-sm mx-auto bg-white rounded-lg shadow-lg overflow-hidden lg:max-w-4xl" style="margin-top: 20vh">
     <div class="hidden lg:block lg:w-1/2 bg-cover"
         style="background-image:url('https://images.unsplash.com/photo-1542060748-10c28b62716f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80')">
     </div>
 
-    <div class="w-full py-8 px-6 md:px-8 lg:w-1/2 align-middle">
+    <div class="w-full py-8 px-6 md:px-8 lg:w-1/2">
         <h2 class="text-2xl font-semibold text-gray-700 text-center">Welkom terug!</h2>
 
         <p class="text-xl text-gray-600 text-center">Log hier in!</p>
@@ -16,7 +16,7 @@
 
             <div class="mt-4">
                 <label class="block text-gray-600 text-sm font-medium mb-2"
-                    for="email">{{ __('E-Mail Address') }}</label>
+                    for="email">{{ __('E-Mailaddres') }}</label>
                 <input id="email"
                     class="bg-white text-gray-700 border border-gray-300 rounded py-2 px-4 block w-full focus:border-blue-500 focus:outline-none focus:shadow-outline  @error('email') is-invalid @enderror"
                     type="email" value="{{ old('email') }}" name="email" required autocomplete="email" autofocus>
