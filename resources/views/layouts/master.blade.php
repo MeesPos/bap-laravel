@@ -16,14 +16,25 @@
     </nav>
 
     <header>
-        @include('partials.header')
+        @section('header')
+        @show
     </header>
 
-    <section id="products" class="text-gray-700 body-font">
-        @include('partials.products')
-    </section>
+    <main>
+        @section('main')
+        @show
+    </main>
 
     <script src="/js/app.js"></script>
+    <script>
+        document.getElementById("toggle").addEventListener("click", function() {
+            if(document.getElementById("nav-menu").style.display === "none") {
+                document.getElementById("nav-menu").style.display = "inherit"
+            } else if(document.getElementById("nav-menu").style.display === "inherit") {
+                document.getElementById("nav-menu").style.display = "none";
+            }
+        })
+    </script>
 </body>
 
 </html>

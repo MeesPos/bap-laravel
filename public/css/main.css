@@ -31168,13 +31168,11 @@ video {
           animation: bounce 1s infinite;
 }
 
-#menu-toggle:checked + #menu {
-  display: block;
-}
-
-.bg-dots {
-  background-image: url(https://assets-global.website-files.com/5b5a66e9f3166b36708705fa/5dea7a12bb83ab1f13040de5_cx-dots.svg);
-  background-repeat: no-repeat;
+.error-admin {
+  position: absolute;
+  margin: 0 auto;
+  top: 5vh;
+  right: 5vw;
 }
 
 @media (min-width: 640px) {

@@ -28,6 +28,16 @@
         @yield('content')
     </main>
     </div>
+
+    <script>
+        document.getElementById("toggle").addEventListener("click", function() {
+            if(document.getElementById("nav-menu").style.display === "none") {
+                document.getElementById("nav-menu").style.display = "inherit"
+            } else if(document.getElementById("nav-menu").style.display === "inherit") {
+                document.getElementById("nav-menu").style.display = "none";
+            }
+        })
+    </script>
 </body>
 
 </html>

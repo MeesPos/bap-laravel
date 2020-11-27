@@ -2,4 +2,11 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.error-admin{
+    position: absolute;
+    margin: 0 auto;
+    top: 5vh;
+    right: 5vw;
+}
+
 @import 'header';
