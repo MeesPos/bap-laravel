@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/dames', 'ProductController@dames')->name('dames');
 Route::get('/kids', 'ProductController@kids')->name('kids');
 Route::get('/contact', 'ProductController@contact')->name('contact');
 
-Route::get('/admin', 'AdminController@admin')->name('admin');
+Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
+    Route::get('/', 'AdminController@admin')->name('admin');
+});
 
 Auth::routes();
