@@ -10,30 +10,30 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
             <div>
                 <label class="text-gray-700" for="username">Product naam</label>
-                <input id="username" type="text" placeholder="Naam van het product..." name="productTitle"
-                    value="{{ old('productTitle') }}"
-                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productTitle') is-invalid @enderror">
-                <span>@error('productTitle')
+                <input id="username" type="text" placeholder="Naam van het product..." name="productName"
+                    value="{{ old('productName') }}"
+                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productName') is-invalid @enderror">
+                <span>@error('productName')
                     <p style="color: red">{{ $message }}</p>
                     @enderror</span>
             </div>
 
             <div>
                 <label class="text-gray-700" for="emailAddress">Product Merk</label>
-                <input id="emailAddress" type="email" placeholder="Merk van het product..." name="productMerk"
-                    value="{{ old('productMerk') }}"
-                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productMerk') is-invalid @enderror">
-                <span>@error('productMerk')
+                <input id="emailAddress" type="text" placeholder="Merk van het product..." name="productBrand"
+                    value="{{ old('productBrand') }}"
+                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productBrand') is-invalid @enderror">
+                <span>@error('productBrand')
                     <p style="color: red">{{ $message }}</p>
                     @enderror</span>
             </div>
 
             <div>
                 <label class="text-gray-700" for="password">Product Materiaal</label>
-                <input id="password" type="text" placeholder="Materiaal van het product..." name="productMateriaal"
-                    value="{{ old('productMateriaal') }}"
-                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productMateriaal') is-invalid @enderror">
-                <span>@error('productMateriaal')
+                <input id="password" type="text" placeholder="Materiaal van het product..." name="productMaterial"
+                    value="{{ old('productMaterial') }}"
+                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productMaterial') is-invalid @enderror">
+                <span>@error('productMaterial')
                     <p style="color: red">{{ $message }}</p>
                     @enderror</span>
             </div>
@@ -42,7 +42,7 @@
                 <label class="text-gray-700" for="passwordConfirmation">Product Gender</label>
                 <input id="passwordConfirmation" type="text" placeholder="Gender van het product..."
                     name="productGender" value="{{ old('productGender') }}"
-                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productTitle') is-invalid @enderror">
+                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productGender') is-invalid @enderror">
                 <span>@error('productGender')
                     <p style="color: red">{{ $message }}</p>
                     @enderror</span>
@@ -50,9 +50,9 @@
 
             <div>
                 <label class="text-gray-700" for="productDesc">Product Beschrijving</label>
-                <textarea id="productDesc" placeholder="Beschrijving van het product..." name="productDescription"
+                <textarea id="productDesc" placeholder="Beschrijving van het product..." name="productDesc"
                     value="{{ old('productDesc') }}"
-                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productTitle') is-invalid @enderror"
+                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productDesc') is-invalid @enderror"
                     ></textarea>
                 <span>@error('productDesc')
                     <p style="color: red">{{ $message }}</p>
@@ -61,17 +61,17 @@
 
             <div>
                 <label class="text-gray-700" for="productPrice">Product Prijs</label>
-                <input id="productPrice" type="text" placeholder="Prijs van het product..." name="productPrijs"
-                    value="{{ old('productPrijs') }}"
-                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productTitle') is-invalid @enderror">
-                <span>@error('productPrijs')
+                <input id="productPrice" type="text" placeholder="Prijs van het product..." name="productPrice"
+                    value="{{ old('productPrice') }}"
+                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productPrice') is-invalid @enderror">
+                <span>@error('productPrice')
                     <p style="color: red">{{ $message }}</p>
                     @enderror</span>
             </div>
 
             <div>
-                <label class="text-gray-700" for="productPrice">Product Afbeeldingen</label>
-                <input type="file" name="filename[]" class="w-full mt-2 py-2 block rounded bg-white text-gray-800 @error('filename') is-invalid @enderror">
+                <label class="text-gray-700" for="filename">Product Afbeeldingen</label>
+                <input type="file" name="filename[]" multiple class="w-full mt-2 py-2 block rounded bg-white text-gray-800 @error('filename') is-invalid @enderror">
             </div>
         </div>
 
