@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +24,8 @@ Route::get('/contact', 'ProductController@contact')->name('contact');
 
 Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@admin')->name('admin');
+    Route::get('/add-product', 'AdminController@add_product')->name('add_product');
+    Route::post('/insert-product', 'AdminController@insert_product')->name('insert_product');
 });
 
 Auth::routes();

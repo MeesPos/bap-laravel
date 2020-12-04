@@ -20,11 +20,11 @@ class adminCheck
         if(Auth::user()) {
             $user = Auth::user();
         } else {
-            return redirect('login')->with('error', 'U bent nog niet ingelogd!');
+            return redirect('login');
         }
 
         if($user->admin != true) {
-            return redirect('/')->with('error', 'U bent geen admin!');
+            return redirect('/');
         }
 
         return $next($request);
