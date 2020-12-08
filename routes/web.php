@@ -26,6 +26,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@admin')->name('admin');
     Route::get('/add-product', 'AdminController@add_product')->name('add_product');
     Route::post('/insert-product', 'AdminController@insert_product')->name('insert_product');
+    Route::get('/all-products', 'AdminController@all_products')->name('all_products');
+    Route::get('/delete-product/{id}', 'AdminController@delete_product')->name('delete_product')->where('id', '[0-9]+');
+    Route::get('/change-product/{id}', 'AdminController@change_product')->name('change_product')->where('id', '[0-9]+');
 });
 
 Auth::routes();

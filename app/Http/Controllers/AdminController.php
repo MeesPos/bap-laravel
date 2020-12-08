@@ -27,16 +27,42 @@ class AdminController extends Controller
                 'productMaterial' => 'required',
                 'productGender' => 'required',
                 'productDesc' => 'required',
-                'productPrice' => 'required'
+                'productPrice' => 'required|numeric'
+                // 'filename[]' => 'required|image'
             ]
         );
 
+        // dd($request);
+
         $product = Product::create($data);
 
-        foreach($request->input('filename') as $image) :
-            $product_image = product_image::insert([
-                ['productID' => $product->id, 'image' => $image]
+        foreach($request->file('filename') as $image) :
+            $file = $image->store('products', 'public');
+            $image = $file;
+
+            product_image::insert([
+                ['productID' => $product->id, 'image' => $file]
             ]);
         endforeach;
+    }
+
+    public function all_products() {
+        $products = Product::all();
+
+        return view('all-products', ['products' => $products]);
+    }
+
+    public function delete_product($id) {
+        Product::where('id', $id)->delete();
+        product_image::where('productID', $id)->delete();
+
+        return back();
+    }
+
+    public function change_product($id) {
+        $product = Product::where('id', $id)->get();
+        $images = product_image::where('productID', $id)->get();
+
+        return view('change_product', ['product' => $product, 'images' => $images]);
     }
 }
