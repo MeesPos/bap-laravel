@@ -29,6 +29,8 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
     Route::get('/all-products', 'AdminController@all_products')->name('all_products');
     Route::get('/delete-product/{id}', 'AdminController@delete_product')->name('delete_product')->where('id', '[0-9]+');
     Route::get('/change-product/{id}', 'AdminController@change_product')->name('change_product')->where('id', '[0-9]+');
+    Route::get('/delete-image/{id}', 'AdminController@delete_image')->name('delete_image');
+    Route::post('/update-project/{id}', 'AdminController@update_product')->name('update_product');
 });
 
 Auth::routes();

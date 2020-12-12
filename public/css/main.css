@@ -31179,6 +31179,29 @@ video {
   border: 2px red solid !important;
 }
 
+.project-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.project-images img {
+  max-width: 80%;
+}
+
+@media screen and (max-width: 500px) {
+  .project-images {
+    grid-template-columns: 1fr;
+  }
+
+  .project-images .project-image {
+    margin: 10px 0;
+  }
+
+  .project-images img {
+    max-width: 100%;
+  }
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

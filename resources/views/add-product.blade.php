@@ -52,8 +52,7 @@
                 <label class="text-gray-700" for="productDesc">Product Beschrijving</label>
                 <textarea id="productDesc" placeholder="Beschrijving van het product..." name="productDesc"
                     value="{{ old('productDesc') }}"
-                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productDesc') is-invalid @enderror"
-                    ></textarea>
+                    class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring @error('productDesc') is-invalid @enderror"></textarea>
                 <span>@error('productDesc')
                     <p style="color: red">{{ $message }}</p>
                     @enderror</span>
@@ -71,7 +70,8 @@
 
             <div>
                 <label class="text-gray-700" for="filename">Product Afbeeldingen</label>
-                <input type="file" name="filename[]" multiple class="w-full mt-2 py-2 block rounded bg-white text-gray-800 @error('filename') is-invalid @enderror">
+                <input type="file" name="filename[]" multiple
+                    class="w-full mt-2 py-2 block rounded bg-white text-gray-800 @error('filename') is-invalid @enderror">
                 <span>@error('filename[]')
                     <p style="color: red">{{ $message }}</p>
                     @enderror</span>

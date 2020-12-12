@@ -1,3 +1,22 @@
 .is-invalid{
     border: 2px red solid!important;
 }
+
+.project-images{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    & img{
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .project-images{
+        grid-template-columns: 1fr;
+        & .project-image{
+            margin: 10px 0;
+        } & img{
+            max-width: 100%;
+        }
+    }
+}

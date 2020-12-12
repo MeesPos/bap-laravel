@@ -24,6 +24,7 @@
                 </th>
             </tr>
         </thead>
+
         <tbody class="bg-gray-200">
             @foreach($products as $product)
             <tr class="bg-white border-4 border-gray-200">
