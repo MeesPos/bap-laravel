@@ -22,4 +22,8 @@ class ProductController extends Controller
     public function contact() {
         return 'Je zit op de contact pagina';
     }
+
+    public function details($id) {
+        return 'Je zit op de detailspagina van product ' . $id;
+    }
 }
