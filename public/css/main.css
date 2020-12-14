@@ -31202,6 +31202,24 @@ video {
   }
 }
 
+.recentCarousel {
+  width: 95vw;
+  margin: 3vh auto;
+}
+
+.recentHeader {
+  text-align: center;
+}
+
+.owl-recent {
+  margin-top: 1vh;
+}
+
+.product-image {
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
