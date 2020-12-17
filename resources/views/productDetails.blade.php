@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('header')
+@section('main')
 @foreach($product as $row)
 <section class="text-gray-700 body-font overflow-hidden">
     <div class="container px-5 py-24 mx-auto">
