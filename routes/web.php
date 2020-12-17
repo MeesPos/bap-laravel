@@ -20,7 +20,7 @@ Route::get('/', 'HomeController@home')->name('home');
 Route::get('/heren', 'ProductController@heren')->name('heren');
 Route::get('/dames', 'ProductController@dames')->name('dames');
 Route::get('/kids', 'ProductController@kids')->name('kids');
-Route::get('/product/{id}', 'ProductController@details')->name('details');
+Route::get('/product/{id}/{name}', 'ProductController@details')->name('details');
 Route::get('/contact', 'ProductController@contact')->name('contact');
 
 Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {

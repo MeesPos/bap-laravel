@@ -50,7 +50,7 @@
                 {{$row['productPrice']}},-</h3>
             <h2 class="text-lg text-gray-900 font-medium title-font">{{$row['productName']}}</h2>
             <p class="leading-relaxed text-base">{{Str::words($row['productDesc'], 20)}}</p>
-            <a href="#">
+            <a href="{{route('details', ['id' => $row['id'], 'name' => strtolower(str_replace(' ', '-', $row['productName']))])}}">
                 <button
                     class="h-10 px-5 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">Details</button>
             </a>
