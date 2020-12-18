@@ -20,8 +20,7 @@ class ProductController extends Controller
     public function all_products()
     {
         $product = Product::paginate(20);
-        $images = ProductImage::all();
 
-        return view('our-products', ['product' => $product, 'images' => $images]);
+        return view('our-products', ['product' => $product]);
     }
 }

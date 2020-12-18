@@ -31,4 +31,9 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
     Route::post('/update-project/{id}', 'AdminController@update_product')->name('update_product');
 });
 
+Route::group(['middleware' => ['auth'], 'prefix' => 'gebruiker'], function () {
+    Route::get('/profiel', 'ProfielController@profiel')->name('profiel');
+    Route::post('/profiel/aanpassen/{id}', 'ProfielController@aanpassen')->name('aanpassen');
+});
+
 Auth::routes();
