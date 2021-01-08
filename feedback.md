@@ -1,6 +1,6 @@
 # Feedback voor Leroy en Pepijn
 
-Leroy Andrade
+## Leroy Andrade
 
 Onderwerp website / samenvatting
 
@@ -18,7 +18,7 @@ Tops
 
 - Duidelijk design
 
-Pepijn de Koning
+## Pepijn de Koning
 
 Onderwerp website / samenvatting
 
@@ -38,7 +38,7 @@ Tops
 
 # Feedback van hun voor mij
 
-## Pepijn:
+## Pepijn de Koning
 
 Onderwerp website / samenvatting
 
