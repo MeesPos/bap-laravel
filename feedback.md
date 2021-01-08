@@ -55,3 +55,15 @@ Tips
 Tops
 
 - Ziet er allemaal clean en duidelijk uit
+
+Leroy Andrade:
+
+Onderwerp website / samenvatting:
+Opmerkingen / vragn
+
+Tips:
+- In view: profiel, zou de uitleining van het menu en of winkel karretje, mogen matchen met de section er onder in dezelfde padding lijn
+
+Tops:
+- De website login scherm zag er mooi uit en gaf ook het gevoel van de kleding website. Die gevoel betekend dat er aandacht aan is besteed.
+- Verder is de website mooi gedaan.
