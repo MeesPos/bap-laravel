@@ -4,7 +4,7 @@ Leroy Andrade
 
 Onderwerp website / samenvatting
 
-- Een Formule 1 App
+- Een Formule 1 fanwebsite/app
 
 Opmerkingen / Vragen
 
