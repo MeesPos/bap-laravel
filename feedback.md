@@ -62,11 +62,11 @@ Tops
 Onderwerp website / samenvatting:
 Opmerkingen / vragen
 
-Tips:
+Tips
 
-- In view: profiel, zou de uitleining van het menu en of winkel karretjeof mogen matchen met de section er onder in dezelfde padding lijn
+- In view: profiel, zou de uitleining van het menu en of winkel karretje of mogen matchen met de section er onder in dezelfde padding lijn
 
-Tops:
+Tops
 
-- De website login scherm zag er mooi uit en gaf ook het gevoel van de kleding website. en dat gevoel betekend dat er aandacht aan is besteed.
+- De website login scherm zag er mooi uit en gaf ook het gevoel van de kleding website. En dat gevoel betekend dat er aandacht aan is besteed.
 - Verder is de website mooi gedaan.
