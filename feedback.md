@@ -37,7 +37,8 @@ Tops
 - In menu gebeuren er dingen als je erover heen hovered
 
 # Feedback van hun voor mij
-Pepijn:
+
+## Pepijn:
 
 Onderwerp website / samenvatting
 
@@ -56,7 +57,7 @@ Tops
 
 - Ziet er allemaal clean en duidelijk uit
 
-Leroy Andrade:
+## Leroy Andrade:
 
 Onderwerp website / samenvatting:
 Opmerkingen / vragn
