@@ -30,3 +30,9 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+import Vue from 'vue'
+
+window.app = new Vue({
+    el: '#app',
+})

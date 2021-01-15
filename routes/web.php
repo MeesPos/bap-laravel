@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('/product/{id}/{name}', 'ProductController@details')->name('details');
 Route::get('/onze-producten', 'ProductController@all_products')->name('all_products');
+Route::get('/search', 'HomeController@search')->name('search');
 
 Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
     Route::get('/', 'AdminController@admin')->name('admin');
@@ -34,6 +35,7 @@ Route::group(['middleware' => ['admin'], 'prefix' => 'admin'], function () {
 Route::group(['middleware' => ['auth'], 'prefix' => 'gebruiker'], function () {
     Route::get('/profiel', 'ProfielController@profiel')->name('profiel');
     Route::post('/profiel/aanpassen/{id}', 'ProfielController@aanpassen')->name('aanpassen');
+    Route::get('/profiel/2fa', 'ProfielController@twofactor')->name('two-factor')->middleware('2fa');
 });
 
 Auth::routes();

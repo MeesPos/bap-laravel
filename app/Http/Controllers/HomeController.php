@@ -16,10 +16,27 @@ class HomeController extends Controller
     public function home()
     {
         $product = Product::limit(10)->orderBy('created_at', 'ASC')->get();
-        foreach ($product as $row) :
-            $image = ProductImage::where('productID', $row['id'])->limit(1)->get();
-        endforeach;
 
-        return view('homepage', ['products' => $product, 'image' => $image]);
+        return view('homepage', ['products' => $product]);
+    }
+
+    public function search(Request $request)
+    {
+        $key = trim($request->get('q'));
+
+        $products = Product::query()
+            ->where('productName', 'like', "%{$key}%")
+            ->orWhere('productBrand', 'like', "%{$key}%")
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        //get the recent 5 posts
+        $recent_posts = Product::paginate(20);
+
+        return view('search', [
+            'key' => $key,
+            'product' => $products,
+            'products' => $recent_posts
+        ]);
     }
 }

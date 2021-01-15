@@ -31220,6 +31220,12 @@ video {
      object-fit: contain;
 }
 
+.search-key {
+  font-size: 25px;
+  font-weight: bold;
+  padding-bottom: 2vh;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

@@ -42,10 +42,8 @@
     <div class="owl-carousel owl-recent owl-theme">
         @foreach($products as $row)
         <div class="bg-gray-100 p-6 rounded-lg">
-            @foreach($image as $cover)
             <img class="h-40 rounded w-full object-cover object-center mb-6 product-image"
-                src="{{asset('storage/' . $cover['image'])}}" alt="{{$row['productName']}}">
-            @endforeach
+                src="{{asset('storage/' . $row->getFirstImage())}}" alt="{{$row['productName']}}">
             <h3 class="tracking-widest text-indigo-500 text-medium font-medium title-font">&euro;
                 {{$row['productPrice']}},-</h3>
             <h2 class="text-lg text-gray-900 font-medium title-font">{{$row['productName']}}</h2>

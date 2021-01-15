@@ -23,9 +23,13 @@
             <div class="md:flex items-center" id="nav-menu" style="display: inherit">
                 <div class="flex flex-col md:flex-row md:mx-6">
                     <div class="mx-10 hidden md:block">
-                        <input type="text"
-                            class="w-32 lg:w-48 py-1 px-3 leading-tight text-sm text-gray-700 bg-gray-100 rounded-md placeholder-gray-500 border border-transparent focus:outline-none focus:bg-white focus:shadow-outline focus:border-blue-400"
-                            placeholder="Zoeken..." aria-label="Zoeken...">
+                        <form action="/search" method="GET" role="search">
+                            {{ csrf_field() }}
+                            <input type="text"
+                                class="w-32 lg:w-48 py-1 px-3 leading-tight text-sm text-gray-700 bg-gray-100 rounded-md placeholder-gray-500 border border-transparent focus:outline-none focus:bg-white focus:shadow-outline focus:border-blue-400"
+                                placeholder="Zoeken..." aria-label="Zoeken..." name="q">
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                        </form>
                     </div>
                     <a class="my-1 text-sm text-gray-700 font-medium hover:text-indigo-500 md:mx-4 md:my-0 py-1"
                         href="{{route('home')}}">Home</a>
@@ -41,7 +45,7 @@
                     @else
                     <div class="relative">
                         <!-- Dropdown toggle button -->
-                        <button class="relative z-10 block rounded-md bg-white p-2 focus:outline-none">
+                        <button class="relative z-10 block rounded-md bg-white p-2 focus:outline-none" id="dropdown-toggle">
                             <svg class="h-5 w-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
@@ -51,7 +55,7 @@
                         </button>
 
                         <!-- Dropdown menu -->
-                        <div class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20">
+                        <div class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-md shadow-xl z-20" id="dropdown-menu" style="display: none">
                             <a href="#"
                                 class="block px-4 py-2 text-sm capitalize text-gray-700 hover:bg-blue-500 hover:text-white">
                                 your profile
@@ -98,5 +102,3 @@
             </div>
         </div>
     </nav>
-
-
