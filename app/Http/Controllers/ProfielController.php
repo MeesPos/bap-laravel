@@ -31,9 +31,13 @@ class ProfielController extends Controller
 
     public function twofactor() {
         $google2fa = app('pragmarx.google2fa');
-        return $google2fa->generateSecretKey();
-        $google2fa->setQRCodeBackend('svg');
+        // return $google2fa->generateSecretKey();
+        // return $google2fa->setQRCodeBackend('svg');
 
-        return view('auth.2fa');
+        return view('auth.2fa', ['twofactor' => $google2fa]);
+    }
+
+    public function authenticate() {
+        
     }
 }

@@ -10,6 +10,7 @@
                     <img alt="ecommerce" class="object-cover object-center w-full h-full block"
                     src="{{asset('storage/' . $row->getFirstImage())}}">
                 </a>
+                {{dd($row)}}
                 <div class="mt-4">
                     <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1 uppercase">{{$row['productBrand']}}</h3>
                     <h2 class="text-gray-900 title-font text-lg font-medium">{{$row['productName']}}</h2>

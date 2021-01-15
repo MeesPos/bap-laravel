@@ -58,7 +58,7 @@ return [
     /*
      * One Time Password View.
      */
-    'view' => 'auth.2fa',
+    'view' => 'auth.2fa_verify',
 
     /*
      * One Time Password error message.
