@@ -28,16 +28,4 @@ class ProfielController extends Controller
 
         return back()->with('succes', 'Je gegevens zijn succesvol aangepast!');
     }
-
-    public function twofactor() {
-        $google2fa = app('pragmarx.google2fa');
-        // return $google2fa->generateSecretKey();
-        // return $google2fa->setQRCodeBackend('svg');
-
-        return view('auth.2fa', ['twofactor' => $google2fa]);
-    }
-
-    public function authenticate() {
-        
-    }
 }
