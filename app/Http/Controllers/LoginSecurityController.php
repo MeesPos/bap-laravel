@@ -80,9 +80,9 @@ class LoginSecurityController extends Controller
         if ($valid) {
             $user->loginSecurity->google2fa_enable = 1;
             $user->loginSecurity->save();
-            return redirect('2fa')->with('success', "2FA is enabled successfully.");
+            return redirect('2fa')->with('success', "2FA is geactiveerd.");
         } else {
-            return redirect('2fa')->with('error', "Invalid verification Code, Please try again.");
+            return redirect('2fa')->with('error', "Foute validatie code, probeer het opnieuw.");
         }
     }
 
@@ -102,6 +102,6 @@ class LoginSecurityController extends Controller
         $user = Auth::user();
         $user->loginSecurity->google2fa_enable = 0;
         $user->loginSecurity->save();
-        return redirect('/2fa')->with('success', "2FA is now disabled.");
+        return redirect('/2fa')->with('success', "2FA is nu gedactiveerd.");
     }
 }

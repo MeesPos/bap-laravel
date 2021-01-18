@@ -1,75 +1,73 @@
 @extends('layouts.master')
 @section('main')
-    <div class="container">
-        <div class="row justify-content-md-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header"><strong>Two Factor Authentication</strong></div>
-                    <div class="card-body">
-                        <p>Two factor authentication (2FA) strengthens access security by requiring two methods (also referred to as factors) to verify your identity. Two factor authentication protects against phishing, social engineering and password brute force attacks and secures your logins from attackers exploiting weak or stolen credentials.</p>
+<div class="card-header text-center text-5xl my-8 font-bold">Two Factor Authentication</div>
+<div class="container mx-auto">
+    <p class="text-center mb-5">Two Factor Authentication (2FA) versterkt de toegangsbeveiliging door twee methoden (ook
+        wel factoren genoemd) te vereisen om uw identiteit te verifiëren. Tweefactorauthenticatie beschermt tegen
+        phishing, social engineering en brute force-aanvallen met wachtwoorden en beveiligt uw logins tegen aanvallers
+        die misbruik maken van zwakke of gestolen inloggegevens.</p>
 
-                        @if (session('error'))
-                            <div class="alert alert-danger">
-                                {{ session('error') }}
-                            </div>
-                        @endif
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-
-                        @if($data['user']->loginSecurity == null)
-                            <form class="form-horizontal" method="POST" action="{{ route('generate2faSecret') }}">
-                                {{ csrf_field() }}
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">
-                                        Generate Secret Key to Enable 2FA
-                                    </button>
-                                </div>
-                            </form>
-                        @elseif(!$data['user']->loginSecurity->google2fa_enable)
-                            1. Scan this QR code with your Google Authenticator App. Alternatively, you can use the code: <code>{{ $data['secret'] }}</code><br/>
-                            <img src="{{$data['google2fa_url'] }}" alt="">
-                            <br/><br/>
-                            2. Enter the pin from Google Authenticator app:<br/><br/>
-                            <form class="form-horizontal" method="POST" action="{{ route('enable2fa') }}">
-                                {{ csrf_field() }}
-                                <div class="form-group{{ $errors->has('verify-code') ? ' has-error' : '' }}">
-                                    <label for="secret" class="control-label">Authenticator Code</label>
-                                    <input id="secret" type="password" class="form-control col-md-4" name="secret" required>
-                                    @if ($errors->has('verify-code'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('verify-code') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-                                <button type="submit" class="btn btn-primary">
-                                    Enable 2FA
-                                </button>
-                            </form>
-                        @elseif($data['user']->loginSecurity->google2fa_enable)
-                            <div class="alert alert-success">
-                                2FA is currently <strong>enabled</strong> on your account.
-                            </div>
-                            <p>If you are looking to disable Two Factor Authentication. Please confirm your password and Click Disable 2FA Button.</p>
-                            <form class="form-horizontal" method="POST" action="{{ route('disable2fa') }}">
-                                {{ csrf_field() }}
-                                <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
-                                    <label for="change-password" class="control-label">Current Password</label>
-                                        <input id="current-password" type="password" class="form-control col-md-4" name="current-password" required>
-                                        @if ($errors->has('current-password'))
-                                            <span class="help-block">
-                                        <strong>{{ $errors->first('current-password') }}</strong>
-                                        </span>
-                                        @endif
-                                </div>
-                                <button type="submit" class="btn btn-primary ">Disable 2FA</button>
-                            </form>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        </div>
+    @if (session('error'))
+    <div class="alert alert-danger bg-gray-100 p-5 rounded w-max m-auto mt-5 mb-5">
+        {{ session('error') }}
     </div>
+    @endif
+    @if (session('success'))
+    <div class="alert alert-success bg-gray-100 p-5 rounded w-max m-auto mt-5 mb-5">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    @if($data['user']->loginSecurity == null)
+    <form class="form-horizontal" method="POST" action="{{ route('generate2faSecret') }}">
+        {{ csrf_field() }}
+        <div class="form-group">
+            <button type="submit" class="flex items-center py-2 px-4 mt-3 capitalize tracking-wide bg-blue-600 dark:bg-gray-800 text-white font-medium rounded hover:bg-blue-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-blue-500 dark:focus:bg-gray-700">
+                2FA Key aanmaken
+            </button>
+        </div>
+    </form>
+    @elseif(!$data['user']->loginSecurity->google2fa_enable)
+    <p class="text-center font-bold">Scan deze code met de Google Authenticator App. Als dat niet werkt, kan je deze code gebruiken:
+    <code>{{ $data['secret'] }}</code><br /></p>
+    <img src="{{$data['google2fa_url'] }}" class="m-auto">
+    <br /><br />
+    <p class="text-center font-bold">Voer de code in van de Google Authenticator app<br /><br /></p>
+    <form class="form-horizontal" method="POST" action="{{ route('enable2fa') }}">
+        {{ csrf_field() }}
+        <div class="form-group{{ $errors->has('verify-code') ? ' has-error' : '' }}">
+            <label for="secret" class="text-gray-700">Authenticator Code</label>
+            <input id="secret" type="password" class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring" name="secret" required>
+            @if ($errors->has('verify-code'))
+            <span class="help-block">
+                <strong>{{ $errors->first('verify-code') }}</strong>
+            </span>
+            @endif
+        </div>
+        <button type="submit" class="flex items-center py-2 px-4 mt-3 capitalize tracking-wide bg-blue-600 dark:bg-gray-800 text-white font-medium rounded hover:bg-blue-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-blue-500 dark:focus:bg-gray-700">
+            Activeer 2FA
+        </button>
+    </form>
+    @elseif($data['user']->loginSecurity->google2fa_enable)
+    <div class="bg-gray-100 p-5 rounded w-max m-auto">
+        2FA is op dit moment <strong>geactiveerd</strong> op je account.
+    </div>
+
+    <p class="text-center font-bold mt-5">Als je Two Factor Authentication uit wilt zetten, klik op de deactiveer knop.</p>
+
+    <form class="form-horizontal mt-5" method="POST" action="{{ route('disable2fa') }}">
+        {{ csrf_field() }}
+        <div class="form-group{{ $errors->has('current-password') ? ' has-error' : '' }}">
+            <label for="change-password" class="text-gray-700">Huidig wachtwoord</label>
+            <input id="current-password" type="password" class="w-full mt-2 px-4 py-2 block rounded bg-white text-gray-800 border border-gray-300 focus:border-blue-500 focus:outline-none focus:ring" name="current-password" required>
+            @if ($errors->has('current-password'))
+            <span class="help-block">
+                <strong>{{ $errors->first('current-password') }}</strong>
+            </span>
+            @endif
+        </div>
+        <button type="submit" class="flex items-center py-2 px-4 mt-3 capitalize tracking-wide bg-blue-600 dark:bg-gray-800 text-white font-medium rounded hover:bg-blue-500 dark:hover:bg-gray-700 focus:outline-none focus:bg-blue-500 dark:focus:bg-gray-700">Deactiveer 2FA</button>
+    </form>
+    @endif
+</div>
 @endsection
