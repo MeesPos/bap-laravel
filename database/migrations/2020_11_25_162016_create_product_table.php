@@ -21,6 +21,7 @@ class CreateProductTable extends Migration
             $table->string('productGender');
             $table->string('productPrice');
             $table->string('productMaterial');
+            $table->boolean('visible')->default(1);
             $table->timestamps();
         });
 

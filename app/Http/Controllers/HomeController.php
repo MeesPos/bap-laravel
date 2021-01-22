@@ -15,7 +15,7 @@ class HomeController extends Controller
      */
     public function home()
     {
-        $product = Product::limit(10)->orderBy('created_at', 'ASC')->get();
+        $product = Product::visible()->limit(10)->orderBy('created_at', 'ASC')->get();
 
         return view('homepage', ['products' => $product]);
     }
@@ -31,7 +31,7 @@ class HomeController extends Controller
             ->get();
 
         //get the recent 5 posts
-        $recent_posts = Product::paginate(20);
+        $recent_posts = Product::visible()->paginate(20);
 
         return view('search', [
             'key' => $key,

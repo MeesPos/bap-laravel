@@ -10,17 +10,20 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
-    public function admin() {
+    public function admin()
+    {
         $user = Auth::user();
 
         return view('admin', ['user' => $user]);
     }
 
-    public function add_product() {
+    public function add_product()
+    {
         return view('add-product');
     }
 
-    public function insert_product(Request $request) {
+    public function insert_product(Request $request)
+    {
         $data = $request->validate(
             [
                 'productName' => 'required',
@@ -28,13 +31,14 @@ class AdminController extends Controller
                 'productMaterial' => 'required',
                 'productGender' => 'required',
                 'productDesc' => 'required',
-                'productPrice' => 'required|numeric'
+                'productPrice' => 'required|numeric',
+                'visible' => 'required'
             ]
         );
 
         $product = Product::create($data);
 
-        foreach($request->file('filename') as $image) :
+        foreach ($request->file('filename') as $image) :
             $file = $image->store('products', 'public');
             $image = $file;
 
@@ -46,18 +50,20 @@ class AdminController extends Controller
         return redirect()->route('all_products');
     }
 
-    public function all_products() {
+    public function all_products()
+    {
         $products = Product::all();
         $images = ProductImage::all();
 
         return view('all-products', ['products' => $products, 'image' => $images]);
     }
 
-    public function delete_product($id) {
+    public function delete_product($id)
+    {
 
         $image = ProductImage::where('productID', $id)->get();
 
-        foreach($image as $row) :
+        foreach ($image as $row) :
             Storage::disk('public')->delete($row['image']);
         endforeach;
 
@@ -67,25 +73,28 @@ class AdminController extends Controller
         return back();
     }
 
-    public function change_product($id) {
+    public function change_product($id)
+    {
         $product = Product::where('id', $id)->get();
         $images = ProductImage::where('productID', $id)->get();
 
         return view('change_product', ['product' => $product, 'images' => $images]);
     }
 
-    public function delete_image($id) {
+    public function delete_image($id)
+    {
         $image = ProductImage::where('id', $id)->get();
         ProductImage::where('id', $id)->delete();
 
-        foreach($image as $row) :
+        foreach ($image as $row) :
             Storage::disk('public')->delete($row['image']);
         endforeach;
 
         return back();
     }
 
-    public function update_product($id, Request $request) {
+    public function update_product($id, Request $request)
+    {
         $data = $request->validate(
             [
                 'productName' => 'required',
@@ -93,20 +102,23 @@ class AdminController extends Controller
                 'productMaterial' => 'required',
                 'productGender' => 'required',
                 'productDesc' => 'required',
-                'productPrice' => 'required|numeric'
+                'productPrice' => 'required|numeric',
+                'visible' => 'required'
             ]
         );
 
-        $product = Product::where('id', $id)->update($data);
+        Product::where('id', $id)->update($data);
 
-        foreach($request->file('filename') as $image) :
-            $file = $image->store('products', 'public');
-            $image = $file;
+        if ($request->file('filename')) :
+            foreach ($request->file('filename') as $image) :
+                $file = $image->store('products', 'public');
+                $image = $file;
 
-            ProductImage::insert([
-                ['productID' => $id, 'image' => $file]
-            ]);
-        endforeach;
+                ProductImage::insert([
+                    ['productID' => $id, 'image' => $file]
+                ]);
+            endforeach;
+        endif;
 
         return redirect()->route('all_products');
     }

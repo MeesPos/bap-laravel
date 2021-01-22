@@ -77,6 +77,25 @@
             </div>
 
             <div>
+                <label class="text-gray-700">Zichtbaar?</label>
+                <div class="mt-4 max-w-sm text-center flex flex-wrap">
+                    <div class="flex items-center mr-4 mb-4">
+                        <input id="radio1" type="radio" name="visible" class="hidden" value="1" @if($row['visible'] === 1) checked @endif />
+                        <label for="radio1" class="flex items-center cursor-pointer">
+                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                            Ja</label>
+                    </div>
+
+                    <div class="flex items-center mr-4 mb-4">
+                        <input id="radio2" type="radio" name="visible" class="hidden" value="0" @if($row['visible'] === 0) checked @endif/>
+                        <label for="radio2" class="flex items-center cursor-pointer">
+                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                            Nee</label>
+                    </div>
+                </div>
+            </div>
+
+            <div>
                 <h3 class="text-gray-700">Afbeeldingen</h3>
                 <div class="project-images">
                     @foreach($images as $image)

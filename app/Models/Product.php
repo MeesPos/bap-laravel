@@ -15,7 +15,8 @@ class Product extends Model
         'productDesc',
         'productGender',
         'productPrice',
-        'productMaterial'
+        'productMaterial',
+        'visible'
     ];
 
     public function images() {
@@ -24,5 +25,9 @@ class Product extends Model
 
     public function getFirstImage() {
         return $this->images->first()->image;
+    }
+
+    public function scopeVisible($query) {
+        return $query->where('visible', 1);
     }
 }

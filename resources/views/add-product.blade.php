@@ -76,12 +76,31 @@
                     <p style="color: red">{{ $message }}</p>
                     @enderror</span>
             </div>
+
+            <div>
+                <label class="text-gray-700">Zichtbaar?</label>
+                <div class="mt-4 max-w-sm text-center flex flex-wrap">
+                    <div class="flex items-center mr-4 mb-4">
+                        <input id="radio1" type="radio" name="visible" class="hidden" value="1" checked />
+                        <label for="radio1" class="flex items-center cursor-pointer">
+                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                            Ja</label>
+                    </div>
+
+                    <div class="flex items-center mr-4 mb-4">
+                        <input id="radio2" type="radio" name="visible" class="hidden" value="0"/>
+                        <label for="radio2" class="flex items-center cursor-pointer">
+                            <span class="w-4 h-4 inline-block mr-1 rounded-full border border-grey"></span>
+                            Nee</label>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="flex mt-6">
             <button
                 class="px-4 py-2 bg-gray-800 text-gray-200 rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-                type="submit">Product Toevoegen</button>
+                type="submit">Product Wijzigen</button>
         </div>
     </form>
 </div>
