@@ -6,6 +6,7 @@ use App\Models\LoginSecurity;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginSecurityController extends Controller
 {
@@ -103,5 +104,9 @@ class LoginSecurityController extends Controller
         $user->loginSecurity->google2fa_enable = 0;
         $user->loginSecurity->save();
         return redirect('/2fa')->with('success', "2FA is nu gedactiveerd.");
+    }
+
+    public function verify() {
+        return redirect(URL()->previous());
     }
 }

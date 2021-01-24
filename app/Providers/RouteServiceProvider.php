@@ -17,7 +17,16 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/2fa';
+    public const HOME = '/';
+
+    /**
+     * The path to the 2FA Verify.
+     *
+     * This is used after registration
+     *
+     * @var string
+     */
+    public const TWOFACTOR = '/2fa';
 
     /**
      * The controller namespace for the application.

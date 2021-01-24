@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,9 +45,11 @@ Route::group(['prefix' => '2fa'], function () {
     Route::post('/disable2fa', 'LoginSecurityController@disable2fa')->name('disable2fa');
 
     // 2fa middleware
-    Route::post('/2faVerify', function () {
-        return redirect(URL()->previous());
-    })->name('2faVerify')->middleware('2fa');
+    Route::post('/2faVerify', 'LoginSecurityController@verify')->name('2faVerify')->middleware('2fa');
 });
+
+Route::get('/verify', function () {
+    return redirect(route('home'));
+})->middleware(['auth', '2fa'])->name('verify');
 
 Auth::routes();
