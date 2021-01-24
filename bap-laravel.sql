@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 24 jan 2021 om 16:19
+-- Gegenereerd op: 24 jan 2021 om 16:36
 -- Serverversie: 10.4.14-MariaDB
 -- PHP-versie: 7.4.10
 
@@ -58,7 +58,8 @@ CREATE TABLE `login_securities` (
 
 INSERT INTO `login_securities` (`id`, `user_id`, `google2fa_enable`, `google2fa_secret`, `created_at`, `updated_at`) VALUES
 (2, 1, 1, 'PIZWSYH6DEFBOMZJ', '2021-01-18 18:55:09', '2021-01-18 20:57:09'),
-(3, 3, 1, '3KXLK4YGJNNVLSOZ', '2021-01-24 13:30:18', '2021-01-24 13:30:38');
+(3, 3, 1, '3KXLK4YGJNNVLSOZ', '2021-01-24 13:30:18', '2021-01-24 13:30:38'),
+(4, 404, 0, 'AYSX2VWOEQA4YGEJ', '2021-01-24 14:29:28', '2021-01-24 14:29:28');
 
 -- --------------------------------------------------------
 
@@ -572,7 +573,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `tw
 (400, 'Leila Howell Jr.', 'waldo.reichert@altenwerth.com', NULL, '$2y$10$M26k5mTJf3YkkizbrA06bOTPfrmf5EzsvEtFdGRGHBvXsJgcnBmbK', NULL, NULL, NULL, '2021-01-24 14:08:32', '2021-01-24 14:08:32', NULL),
 (401, 'Jody Thiel', 'balistreri.nathanael@huel.org', NULL, '$2y$10$hMWo54ydNxTYmaAQOrfLiODm/T5yG6kJmiUl7ZfwMgwPsc7ryKaQO', NULL, NULL, NULL, '2021-01-24 14:08:32', '2021-01-24 14:08:32', NULL),
 (402, 'Ms. Margot Murray II', 'kuhic.liliana@hotmail.com', NULL, '$2y$10$phsp4QKLlN85Ile4HmurWehpmetsnA48xZyzkBDe4NpQ9LsGGzmb2', NULL, NULL, NULL, '2021-01-24 14:08:32', '2021-01-24 14:08:32', NULL),
-(403, 'Russ Jones DDS', 'elvis11@hotmail.com', NULL, '$2y$10$bnq74IhsS19cdcoFdnLWjeEspfhV9Jbo9LDMQCLoy0CTUoCbT3CQa', NULL, NULL, NULL, '2021-01-24 14:08:33', '2021-01-24 14:08:33', NULL);
+(403, 'Russ Jones DDS', 'elvis11@hotmail.com', NULL, '$2y$10$bnq74IhsS19cdcoFdnLWjeEspfhV9Jbo9LDMQCLoy0CTUoCbT3CQa', NULL, NULL, NULL, '2021-01-24 14:08:33', '2021-01-24 14:08:33', NULL),
+(404, 'Test Klaas', 'test2@gmail.com', NULL, '$2y$10$XGifk5OlAM4yaT6NXa9ene/F5GlqRIUEuIgVQWEdYKwgc//jcgJ0G', NULL, NULL, NULL, '2021-01-24 14:29:15', '2021-01-24 14:29:15', 'true');
 
 --
 -- Indexen voor geëxporteerde tabellen
@@ -637,7 +639,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT voor een tabel `login_securities`
 --
 ALTER TABLE `login_securities`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `migrations`
@@ -661,7 +663,7 @@ ALTER TABLE `product_image`
 -- AUTO_INCREMENT voor een tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=404;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=405;
 
 --
 -- Beperkingen voor geëxporteerde tabellen

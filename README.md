@@ -1,3 +1,21 @@
+### Test gegevens
+Om alles te testen, log in op:
+
+E-mailadres: test2@gmail.com
+Wachtwoord: test123!
+
+### Installatie
+Importeer de SQL dump naar je phpmyadmin.
+
+Verander de .env.example naar .env
+Zet in je .env bestand je database gegevens.
+
+Start de live serer van Laravel. Dit doe je met: ```php artisan serve```
+
+### Documentatie
+
+De admin route is niet te vinden in routes. Om daar heen te gaan moet je naam: {url}/admin.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
