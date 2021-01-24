@@ -100,7 +100,7 @@
         <div class="flex mt-6">
             <button
                 class="px-4 py-2 bg-gray-800 text-gray-200 rounded hover:bg-gray-700 focus:outline-none focus:bg-gray-700"
-                type="submit">Product Wijzigen</button>
+                type="submit">Product Toevoegen</button>
         </div>
     </form>
 </div>

@@ -4,21 +4,12 @@
 <div class="md:flex">
     <div class="flex items-center justify-center px-6 py-8 md:h-128 w-full md:w-1/2">
         <div class="max-w-xl">
-            <h2 class="text-2xl font-semibold text-gray-800 md:text-3xl">Build Your New <span
-                    class="text-indigo-600">Idea</span></h2>
+            <h2 class="text-2xl font-semibold text-gray-800 md:text-3xl">Koop jouw <span class="text-indigo-600">design
+                    kleding</span></h2>
 
-            <p class="mt-2 text-sm text-gray-500 md:text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Blanditiis commodi cum cupiditate ducimus, fugit harum id necessitatibus odio quam quasi, quibusdam rem
-                tempora voluptates.</p>
-
-            <div class="flex mt-6">
-                <a href="#"
-                    class="px-3 py-2 block bg-gray-900 text-gray-200 text-xs font-semibold rounded hover:bg-gray-800">Get
-                    Started</a>
-                <a href="#"
-                    class="mx-4 px-3 py-2 block bg-gray-300 text-gray-900 text-xs font-semibold rounded hover:bg-gray-400">Learn
-                    More</a>
-            </div>
+            <p class="mt-2 text-sm text-gray-500 md:text-base">In de categorie designer van Designia vind je de
+                meest stijlvolle ontwerpen van hoogwaardige kwaliteit. Van ready-to-wear collecties tot aan unieke
+                sneakers en iconische modeaccessoires van designer merken: ontdek het bij Designia.</p>
         </div>
     </div>
 
@@ -48,14 +39,10 @@
                 {{$row['productPrice']}},-</h3>
             <h2 class="text-lg text-gray-900 font-medium title-font">{{$row['productName']}}</h2>
             <p class="leading-relaxed text-base">{{Str::words($row['productDesc'], 20)}}</p>
-            <a href="{{route('details', ['id' => $row['id'], 'name' => strtolower(str_replace(' ', '-', $row['productName']))])}}">
+            <a
+                href="{{route('details', ['id' => $row['id'], 'name' => strtolower(str_replace(' ', '-', $row['productName']))])}}">
                 <button
                     class="h-10 px-5 text-gray-100 transition-colors duration-150 bg-gray-700 rounded-lg focus:shadow-outline hover:bg-gray-800">Details</button>
-            </a>
-            <a href="#">
-                <button
-                    class="h-10 px-5 m-2 text-green-100 transition-colors duration-150 bg-green-500 rounded-lg focus:shadow-outline hover:bg-green-600">In
-                    Winkelwagen</button>
             </a>
         </div>
         @endforeach
